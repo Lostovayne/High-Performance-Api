@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+'use client';
+import React from 'react';
 
 export default function Home() {
-	const [input, setInput] = useState<string>('');
-	const [searchResults, setSearchResults] = useState<{ results: string[]; duration: number }>();
+	const [input, setInput] = React.useState<string>('');
+	const [searchResults, setSearchResults] = React.useState<{ results: string[]; duration: number }>();
 
-	useEffect(() => {
+	React.useEffect(() => {
 		const fetchData = async () => {
 			if (!input) return setSearchResults(undefined);
 			const resp = await fetch(`/api/search?q=${input}`);
