@@ -150,6 +150,23 @@ Para deployar la API en Cloudflare, utiliza el siguiente comando:
 bun add -D @opennextjs/cloudflare
 ```
 
+Crear archivo wrangler.toml:
+
+```toml
+compatibility_date = "2024-11-08"
+name = "fastapi"
+
+[vars]
+UPSTASH_REDIS_REST_TOKEN = ".................."
+UPSTASH_REDIS_REST_URL = "................"
+
+# wrangler.toml (wrangler v3.79.0^)
+[observability]
+enabled = true
+head_sampling_rate = 1
+
+```
+
 ## Contribuciones
 
 Las contribuciones son bienvenidas. Si deseas contribuir, por favor sigue estos pasos:
