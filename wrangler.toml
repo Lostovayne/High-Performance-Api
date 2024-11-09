@@ -2,8 +2,8 @@ compatibility_date = "2024-11-08"
 name = "fastapi"
 
 [vars]
-UPSTASH_REDIS_REST_TOKEN = "AWlNAAIjcDE1MDJmMDMzYjUzZTg0YjU3OGJlMzcwZDQ0N2ZlODhlZXAxMA"
-UPSTASH_REDIS_REST_URL = "https://handy-muskox-26957.upstash.io"
+UPSTASH_REDIS_REST_TOKEN = ".................."
+UPSTASH_REDIS_REST_URL = "................"
 
 # wrangler.toml (wrangler v3.79.0^)
 [observability]
