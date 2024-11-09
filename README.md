@@ -96,8 +96,6 @@ Para interactuar con Redis, puedes usar el siguiente código:
 ```typescript
 import { createClient } from 'redis';
 
-const client = createClient({ url: process.env.REDIS_URL });
-
 client.on('error', (err) => console.log('Redis Client Error', err));
 
 async function connectRedis() {
@@ -142,6 +140,14 @@ Para ejecutar la API, utiliza el siguiente comando:
 
 ```bash
 bun run start
+```
+
+## Deploy in Cloudflare
+
+Para deployar la API en Cloudflare, utiliza el siguiente comando:
+
+```bash
+bun add -D @opennextjs/cloudflare
 ```
 
 ## Contribuciones
