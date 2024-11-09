@@ -63,23 +63,6 @@ export default function Home() {
 						</CommandList>
 					</Command>
 				</div>
-
-				<div className='max-md:mt-14 mt-56 p-3 bg-zinc-200 rounded-2xl flex items-center justify-between gap-4 '>
-					<div className='p-3'>
-						<img
-							src='/postgresql.svg'
-							alt=' logo postgres'
-							className='w-16 h-16 animate-in animate fade-in-5 slide-in-from-bottom-2.5'
-						/>
-					</div>
-					<div className='p-3 grainy rounded-2xl'>
-						<img
-							src='/redis.svg'
-							alt='logo redis'
-							className='w-16 h-16 animate-in animate fade-in-5 slide-in-from-bottom-2.5'
-						/>
-					</div>
-				</div>
 			</div>
 		</main>
 	);
