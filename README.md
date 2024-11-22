@@ -1,5 +1,13 @@
 # FAST API
 
+<div>
+	<img src="https://img.shields.io/badge/-Hono_js-orange?logo=hono" alt="honojs" />
+	<img src="https://img.shields.io/badge/-Bun_js-black?logo=bun" alt="bunjs" />
+	<img src="https://img.shields.io/badge/-Redis-black?logo=redis" alt="redis" />
+</div>
+
+
+
 FAST API es una API completa y eficiente construida con tecnologías modernas como Cloudflare, Hono, Bun, TypeScript,
 Tailwind y Redis. Este proyecto está diseñado para ser rápido, escalable y fácil de usar.
 
