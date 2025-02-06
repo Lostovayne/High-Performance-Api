@@ -6,145 +6,139 @@
 	<img src="https://img.shields.io/badge/-Redis-black?logo=redis" alt="redis" />
 </div>
 
+FAST API is a complete and efficient API built with modern technologies such as Cloudflare, Hono, Bun, TypeScript, Tailwind, and Redis. This project is designed to be fast, scalable, and easy to use.
 
+## Technologies Used
 
-FAST API es una API completa y eficiente construida con tecnologías modernas como Cloudflare, Hono, Bun, TypeScript,
-Tailwind y Redis. Este proyecto está diseñado para ser rápido, escalable y fácil de usar.
+- **Cloudflare**: Provides security and performance through its content delivery network (CDN).
+- **Hono**: A lightweight and fast web framework for building applications in TypeScript.
+- **Bun**: A JavaScript and TypeScript runtime that offers superior performance.
+- **TypeScript**: A superset of JavaScript that adds static typing.
+- **Tailwind CSS**: A utility-first CSS framework that allows for rapid and responsive design.
+- **Redis**: An in-memory database used for caching and session management.
 
-## Tecnologías Utilizadas
+## Installation
 
-- **Cloudflare**: Proporciona seguridad y rendimiento a través de su red de entrega de contenido (CDN).
-- **Hono**: Un framework web ligero y rápido para construir aplicaciones en TypeScript.
-- **Bun**: Un entorno de ejecución de JavaScript y TypeScript que ofrece un rendimiento superior.
-- **TypeScript**: Un superconjunto de JavaScript que añade tipado estático.
-- **Tailwind CSS**: Un framework CSS de utilidad que permite un diseño rápido y responsivo.
-- **Redis**: Una base de datos en memoria que se utiliza para el almacenamiento en caché y la gestión de sesiones.
+Follow these steps to install and set up the project on your local machine:
 
-## Instalación
-
-Sigue estos pasos para instalar y configurar el proyecto en tu máquina local:
-
-1. **Clona el repositorio**:
-
+1. **Clone the repository**:
    ```bash
-   git clone https://github.com/tu_usuario/fast-api.git
+   git clone https://github.com/yourusername/fast-api.git
    cd fast-api
    ```
 
-2. **Instala Bun** (si no lo tienes instalado):
-
+2. **Install Bun** (if not already installed):
    ```bash
    curl -fsSL https://bun.sh/install | bash
    ```
 
-3. **Instala las dependencias**:
-
+3. **Install dependencies**:
    ```bash
    bun install
    ```
 
-4. **Configura Redis**:
-
-   - Asegúrate de tener Redis instalado y en ejecución. Puedes instalarlo usando Docker:
+4. **Configure Redis**:
+   - Ensure Redis is installed and running. You can install it using Docker:
      ```bash
      docker run --name redis -d -p 6379:6379 redis
      ```
 
-5. **Configura las variables de entorno**:
-   - Crea un archivo `.env` en la raíz del proyecto y añade las siguientes variables:
+5. **Set up environment variables**:
+   - Create a `.env` file in the root of the project and add the following variables:
      ```env
      REDIS_URL=redis://localhost:6379
      ```
 
-## Dependencias
+## Dependencies
 
-Asegúrate de que las siguientes dependencias están incluidas en tu `package.json`:
+Ensure the following dependencies are included in your `package.json`:
 
 ```json
 {
-"dependencies": {
-"hono": "^3.0.0",
-"redis": "^4.0.0",
-"tailwindcss": "^2.0.0"
-},
-"devDependencies": {
-"typescript": "^4.0.0",
-"bun-types": "^0.1.0"
+  "dependencies": {
+    "hono": "^3.0.0",
+    "redis": "^4.0.0",
+    "tailwindcss": "^2.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0",
+    "bun-types": "^0.1.0"
+  }
 }
 ```
 
-## Integraciones
+## Integrations
 
 ### Cloudflare
 
-Para utilizar Cloudflare, sigue estos pasos:
+To use Cloudflare, follow these steps:
 
-1. Regístrate en [Cloudflare](https://www.cloudflare.com/).
-2. Añade tu dominio y configura los registros DNS.
-3. Configura las reglas de firewall y las configuraciones de rendimiento según tus necesidades.
+1. Sign up at [Cloudflare](https://www.cloudflare.com/).
+2. Add your domain and configure the DNS records.
+3. Set up firewall rules and performance settings as needed.
 
 ### Hono
 
-Para crear rutas en Hono, puedes usar el siguiente ejemplo:
+To create routes in Hono, you can use the following example:
 
 ```typescript
 import { Hono } from 'hono';
 
 const app = new Hono();
 
-app.get('/', (c) => c.text('¡Hola, FAST API!'));
+app.get('/', (c) => c.text('Hello, FAST API!'));
 
 app.listen(3000);
 ```
 
 ### Redis
 
-Para interactuar con Redis, puedes usar el siguiente código:
+To interact with Redis, you can use the following code:
 
 ```typescript
 import { createClient } from 'redis';
 
+const client = createClient();
+
 client.on('error', (err) => console.log('Redis Client Error', err));
 
 async function connectRedis() {
-	await client.connect();
+  await client.connect();
 }
 
 connectRedis();
 ```
 
-## Estilos con Tailwind CSS
+## Styles with Tailwind CSS
 
-Para configurar Tailwind CSS, sigue estos pasos:
+To set up Tailwind CSS, follow these steps:
 
-1. Crea un archivo de configuración de Tailwind:
-
+1. Create a Tailwind configuration file:
    ```bash
    npx tailwindcss init
    ```
 
-2. Configura tu archivo `tailwind.config.js`:
-
+2. Configure your `tailwind.config.js` file:
    ```javascript
    module.exports = {
-   	content: ['./src/**/*.{html,js,ts}'],
-   	theme: {
-   		extend: {},
-   	},
-   	plugins: [],
+     content: ['./src/**/*.{html,js,ts}'],
+     theme: {
+       extend: {},
+     },
+     plugins: [],
    };
    ```
 
-3. Importa Tailwind en tu archivo CSS:
+3. Import Tailwind in your CSS file:
    ```css
    @tailwind base;
    @tailwind components;
    @tailwind utilities;
    ```
 
-## Ejecución
+## Running the API
 
-Para ejecutar la API, utiliza el siguiente comando:
+To run the API, use the following command:
 
 ```bash
 bun run start
@@ -152,13 +146,13 @@ bun run start
 
 ## Deploy in Cloudflare
 
-Para deployar la API en Cloudflare, utiliza el siguiente comando:
+To deploy the API on Cloudflare, use the following command:
 
 ```bash
 bun add -D @opennextjs/cloudflare
 ```
 
-Crear archivo wrangler.toml:
+Create the `wrangler.toml` file:
 
 ```toml
 compatibility_date = "2024-11-08"
@@ -172,22 +166,21 @@ UPSTASH_REDIS_REST_URL = "................"
 [observability]
 enabled = true
 head_sampling_rate = 1
-
 ```
 
-## Contribuciones
+## Contributing
 
-Las contribuciones son bienvenidas. Si deseas contribuir, por favor sigue estos pasos:
+Contributions are welcome. If you would like to contribute, please follow these steps:
 
-1. Haz un fork del repositorio.
-2. Crea una nueva rama (`git checkout -b feature/nueva-caracteristica`).
-3. Realiza tus cambios y haz un commit (`git commit -m 'Añadir nueva característica'`).
-4. Envía un pull request.
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/new-feature`).
+3. Make your changes and commit (`git commit -m 'Add new feature'`).
+4. Push to the branch.
 
-## Licencia
+## License
 
-Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Contacto
+## Contact
 
-Para más información, puedes contactarme en [epsa@example.com](mailto:tu_email@example.com).
+For more information, you can contact me at [epsa@example.com](mailto:your_email@example.com).

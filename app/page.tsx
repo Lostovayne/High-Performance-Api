@@ -26,7 +26,7 @@ export default function Home() {
 					Experience the power of lightning-fast search with our cutting-edge API, built on a robust foundation of
 					Hono,Nextjs, and Cloudflare.
 					<br />
-					Enter your query below and discover the speed and precision.
+					Enter your inquiry below and find out the speed and accuracy in the country listing.
 				</p>
 				<div className='max-w-md w-full max-md:px-5'>
 					<Command>
